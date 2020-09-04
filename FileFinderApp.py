@@ -1,9 +1,9 @@
 import os
 import tkinter as tk
 import fileFunctions as fFunctions
-#import fileOrganizer
+import fileOrganizer
 
-def main():
+def FileFinderMenu(drive, extension):
     #create a window and set the size
     window = tk.Tk()
     window.geometry("170x100")
@@ -15,19 +15,18 @@ def main():
     barcodeLine = tk.Label(window, text = "Enter WO Number:")
     entry = tk.Entry(window, textvariable = path_var)
     #barcodeLine.pack()
-    barcodeLine.grid(row = 0, column = 2, columnspan = 2, padx = 20)
+    barcodeLine.grid(row = 0, column = 2, columnspan = 2, padx = 20,sticky='NSEW')
     #entry.pack()
     entry.grid(row = 1, column = 2, columnspan = 2, padx = 20)
 
     #creating both buttons (open and cancel)
-    open_button = tk.Button(window,text = "Open", command = lambda: fFunctions.submit(path_var.get(), path_var))
-    #open_button.pack(side=tk.LEFT, padx=(50,0))
-    open_button.grid(row = 3, column = 1, columnspan = 2, padx=20)
+    open_button = tk.Button(window,text = "Open", command = lambda: fFunctions.submit(path_var.get(),
+                                                                                      path_var, drive, extension))
+    open_button.grid(row = 3, column = 1, columnspan = 2, padx=20,sticky='NSEW')
 
     cancel_button = tk.Button(window, text = "Cancel", command = lambda: fFunctions.cancel(path_var.get(),
                                                                                            window, path_var))
-    #cancel_button.pack(side=tk.RIGHT, padx=(0,50))
-    cancel_button.grid(row = 3, column = 3, columnspan = 2, padx = 20)
+    cancel_button.grid(row = 3, column = 3, columnspan = 2, padx = 20,sticky='NSEW')
 
     window.grid_columnconfigure(0,weight=1)
     window.grid_columnconfigure(1,weight=1)
@@ -35,10 +34,11 @@ def main():
     window.grid_rowconfigure(0,weight=1)
     window.grid_rowconfigure(1,weight=1)
 
+    window.title("File Finder")
     window.mainloop()
 
 
 
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+    #FileFinderMenu()

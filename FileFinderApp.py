@@ -1,3 +1,4 @@
+#This program is the window for the File Finder app
 import os
 import tkinter as tk
 import fileFunctions as fFunctions
@@ -37,8 +38,3 @@ def FileFinderMenu(drive, extension):
     window.title("File Finder")
     window.mainloop()
 
-
-
-
-#if __name__ == "__main__":
-    #FileFinderMenu()

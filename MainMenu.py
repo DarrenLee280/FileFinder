@@ -1,3 +1,4 @@
+#This program is the main menu of the file finder app
 import os, string
 import tkinter as tk
 from tkinter import ttk
@@ -11,17 +12,20 @@ class mainMenu_tk(tk.Tk):
 
     def initialize(self):
         self.grid()
+        #Create a title label
+        titleLabel = tk.Label(self, text = "Please Specify Drive Letter and Extension").grid(columnspan = 2)
+        
         #Create the Drive label and dropdown line
-        driveLabel = tk.Label(self, text="Drive:").grid(row=0)
-        available_drives = ['%s:/' % d for d in string.ascii_uppercase if os.path.exists('%s:/' % d)]
+        driveLabel = tk.Label(self, text="Drive:").grid(row=1)
+        available_drives = ['%s:\\' % d for d in string.ascii_uppercase if os.path.exists('%s:\\' % d)]
         driveDropdown = ttk.Combobox(self, values = available_drives)
-        driveDropdown.grid(row=0, column=1)
+        driveDropdown.grid(row=1, column=1)
         driveDropdown.current(0)
 
         #Create the Extension label and dropdown line
-        extensionLabel = tk.Label(self, text="Extension:").grid(row=1)
+        extensionLabel = tk.Label(self, text="Extension:").grid(row=2)
         extensionDropdown = ttk.Combobox(self, values = (".pdf", ".txt"))
-        extensionDropdown.grid(row=1,column=1)
+        extensionDropdown.grid(row=2,column=1)
         extensionDropdown.current(0)
 
         #Continue Button

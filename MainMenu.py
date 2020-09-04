@@ -1,8 +1,8 @@
 #This program is the main menu of the file finder app
 import os, string
 import tkinter as tk
-from tkinter import ttk
 import FileFinderApp as ffa
+from tkinter import ttk
 
 class mainMenu_tk(tk.Tk):
     def __init__(self,parent):

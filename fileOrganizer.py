@@ -12,18 +12,20 @@ def countLines():
             count +=1
 
 def createFile():
-    file = open("Sorted File List.txt", "w")
+    file = open("Sorted File List.txt", "w+")
 
-    for root, dirs, files in os.walk(r"C:\Users\dlee\Desktop\New folder"):
-        for name in files:
+    #start to sort
+    for root, dirs, files in os.walk(r"C:\Users\dlee\Desktop\Test Folder"):
+        new_file = files[::-1]
+        for name in new_file:
             file.write(name + "\n")
 
     file.close()
 
 
-##def main():
-##    createFile()
-##
-##
-##
-##main()
+def main():
+    createFile()
+
+
+
+main()

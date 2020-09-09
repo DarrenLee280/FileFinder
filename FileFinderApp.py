@@ -4,7 +4,7 @@ import tkinter as tk
 import fileFunctions as fFunctions
 import fileOrganizer
 
-class FileFinderMenu(tk.Tk):
+class FileFinderApp(tk.Tk):
     def __init__(self,drive,extension):
         #tk.Tk.__init__(self)
         #self.parent = parent
@@ -39,6 +39,7 @@ class FileFinderMenu(tk.Tk):
                                                                                            window, path_var))
         cancel_button.grid(row = 3, column = 3, columnspan = 2, padx = 20,sticky='NSEW')
 
+        #configure the window 
         window.grid_columnconfigure(0,weight=1)
         window.grid_columnconfigure(1,weight=1)
         window.grid_columnconfigure(2,weight=1)

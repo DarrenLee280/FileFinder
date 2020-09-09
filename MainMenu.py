@@ -15,7 +15,7 @@ class mainMenu_tk(tk.Tk):
         #Create a title label
         titleLabel = tk.Label(self, text = "Please Specify Drive Letter and Extension").grid(columnspan = 2)
         
-        #Create the Drive label and dropdown line
+        #Create t6he Drive label and dropdown line
         driveLabel = tk.Label(self, text="Drive:").grid(row=1)
         available_drives = ['%s:\\' % d for d in string.ascii_uppercase if os.path.exists('%s:\\' % d)]
         driveDropdown = ttk.Combobox(self, values = available_drives)
@@ -40,7 +40,7 @@ class mainMenu_tk(tk.Tk):
 
     def continueCmd(self, drive, extension):
         self.destroy()
-        ffa.FileFinderMenu(drive, extension)
+        ffa.FileFinderApp(drive, extension)
 
     def closeCmd(self):
         self.destroy()

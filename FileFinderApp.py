@@ -35,9 +35,15 @@ class FileFinderApp(tk.Tk):
                                                                                           self.extension))
         open_button.grid(row = 3, column = 1, columnspan = 2, padx=20,sticky='NSEW')
 
+
         cancel_button = tk.Button(window, text = "Cancel", command = lambda: fFunctions.cancel(path_var.get(),
                                                                                            window, path_var))
         cancel_button.grid(row = 3, column = 3, columnspan = 2, padx = 20,sticky='NSEW')
+
+        #Bind Enter key to open
+        #self.bind('<Return>',
+                  #lambda event, path = path_var.get(), path2 = path_var, drive = self.drive, extension = self.extention:
+                      #fFunctions.submit(path, path2, drive, extension))
 
         #configure the window 
         window.grid_columnconfigure(0,weight=1)

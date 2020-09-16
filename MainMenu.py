@@ -33,6 +33,9 @@ class mainMenu_tk(tk.Tk):
                                     command = lambda: self.continueCmd(driveDropdown.get(),
                                                                        extensionDropdown.get()))
         continue_button.grid(row = 3)
+        self.bind('<Return>',
+                  lambda event, drive=driveDropdown.get(), extension = extensionDropdown.get():
+                      self.continueCmd(drive, extension))
 
         #Close button
         close_button = tk.Button(self, text = "Close", command = self.closeCmd)
